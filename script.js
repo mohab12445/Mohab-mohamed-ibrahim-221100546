@@ -1,15 +1,34 @@
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
+function togglePasswordVisibility() {
+  const passwordInput = document.getElementById('password');
+  const togglePassword = document.querySelector('.toggle-password');
 
-    // Get values from inputs
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var rememberMe = document.getElementById('remember-me').checked;
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    togglePassword.innerHTML = '<i class="bx bx-hide"></i>';
+  } else {
+    passwordInput.type = 'password';
+    togglePassword.innerHTML = '<i class="bx bx-show"></i>';
+  }
+}
 
-    // Simple validation: check if username and password are not empty
-    if (username.trim() === "" || password.trim() === "") {
-        alert("Please enter both username and password.");}
-         
-  alert('Login successful!');
-  loginForm.reset();
+const signupForm = document.getElementById('signup-form');
+
+signupForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+
+  if (password !== confirmPassword) {
+    alert('Passwords do not match!');
+    return;
+  }
+
+  // Perform further actions like sending data to the server or redirecting to another page
+  // You can add your own logic here
+
+  alert('Sign up successful!');
+  signupForm.reset();
 });
