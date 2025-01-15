@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Website - About Us</title>
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header img.header-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        nav ul {
+            background: #444;
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .extra-content {
+            margin-top: 1rem;
+            display: none;
+            background: #f9f9f9;
+            padding: 1rem;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <img src="images/header.jpg" alt="Header Image" class="header-image">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../pages/!index.html">Home</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/registration.html">Register</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p>Welcome to our course website. Here you will find information about all the courses we offer, our instructors, and how to register for classes. Our mission is to provide high-quality education and training to help you achieve your goals.</p>
+
+        <button id="toggle-mission">Learn More About Our Mission</button>
+        <div id="mission" class="extra-content">
+            <p>Our mission is to provide learners with accessible and comprehensive courses tailored to meet the needs of modern industries. We believe in empowering individuals through knowledge and hands-on training.</p>
+        </div>
+
+        <button id="toggle-instructors">Meet Our Instructors</button>
+        <div id="instructors" class="extra-content">
+            <ul>
+                <li><strong>John Doe</strong> - Expert in Web Development</li>
+                <li><strong>Jane Smith</strong> - Specialist in Data Science</li>
+                <li><strong>Emily Johnson</strong> - Leader in Cybersecurity Training</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Course Website</p>
+        <a href="mailto:info@coursewebsite.com">Email Us</a>
+    </footer>
+
+    <script>
+        // JavaScript to toggle mission section visibility
+        document.getElementById("toggle-mission").addEventListener("click", () => {
+            const missionSection = document.getElementById("mission");
+            if (missionSection.style.display === "none" || missionSection.style.display === "") {
+                missionSection.style.display = "block";
+            } else {
+                missionSection.style.display = "none";
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', function(event) {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+
+                if (!name || !email) {
+                    event.preventDefault();
+                    alert('Please fill in all required fields.');
+                } else {
+                    alert(`Thank you, ${name}, for registering!`);
+                }
+            });
+
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('mouseover', () => {
+                    link.style.color = '#FFD700'; // Highlight link on hover
+                });
+
+                link.addEventListener('mouseout', () => {
+                    link.style.color = 'white'; // Reset link color on mouse out
+                });
+            });
+        });
+
+        // JavaScript to toggle instructors section visibility
+        document.getElementById("toggle-instructors").addEventListener("click", () => {
+            const instructorsSection = document.getElementById("instructors");
+            if (instructorsSection.style.display === "none" || instructorsSection.style.display === "") {
+                instructorsSection.style.display = "block";
+            } else {
+                instructorsSection.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Website - Contact</title>
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header img.header-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        nav ul {
+            background: #444;
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .contact-form {
+            margin-top: 2rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form input, .contact-form textarea, .contact-form button {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form button {
+            background: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <img src="images/header.jpg" alt="Header Image" class="header-image">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../pages/!index.html">Home</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/registration.html">Register</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p>If you have any questions or need further information, please feel free to contact us.</p>
+        <p>Email: <a href="mailto:info@coursewebsite.com">info@coursewebsite.com</a></p>
+        <p>Phone: 123-456-7890</p>
+        <p>Address: 123 Education Lane, Learnville, LT 12345</p>
+
+        <div id="form-container"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Course Website</p>
+        <a href="mailto:info@coursewebsite.com">Email Us</a>
+    </footer>
+
+    <script>
+        // Create a dynamic contact form
+        const formContainer = document.getElementById("form-container");
+
+        const formHTML = `
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        `;
+        formContainer.innerHTML = formHTML;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', function(event) {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+
+                if (!name || !email) {
+                    event.preventDefault();
+                    alert('Please fill in all required fields.');
+                } else {
+                    alert(`Thank you, ${name}, for registering!`);
+                }
+            });
+
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('mouseover', () => {
+                    link.style.color = '#FFD700'; // Highlight link on hover
+                });
+
+                link.addEventListener('mouseout', () => {
+                    link.style.color = 'white'; // Reset link color on mouse out
+                });
+            });
+        });
+
+        // Add validation and submission handling to the form
+        const contactForm = document.getElementById("contact-form");
+
+        contactForm.addEventListener("submit", event => {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("All fields are required. Please fill them out.");
+            } else {
+                alert(`Thank you, ${name}! Your message has been sent successfully.`);
+                contactForm.reset();
+            }
+        });
+    </script>
+</body>
+</html>

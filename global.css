@@ -1,0 +1,101 @@
+
+/* Global CSS file for the course website */
+
+/* Webpage Title */
+header h1 {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 36px;
+    font-weight: normal;
+    color: white; /* Replace with color palette from Assignment 1 */
+    text-align: center;
+    writing-mode: vertical-rl; /* Makes the text vertical */
+    margin: 0;
+    padding: 1rem 0;
+    background-color: aquamarine;
+}
+
+/* Body Element */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14pt;
+    background-color: #4C0F20;
+    line-height: 32px;
+    color: black; /* Replace with color palette from Assignment 1 */
+    border: 0; /* Ensures border of 0pt unless otherwise noted */
+    margin: 0;
+}
+
+/* Header Element */
+header {
+    text-align: center;
+    margin-bottom: 24px;
+    color:aqua; /* Replace with color palette from Assignment 1 */
+}
+
+/* Header Text */
+header h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Header Section Elements */
+header section {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 18pt;
+    text-transform: uppercase; /* Makes text small caps */
+    color: black;
+    border: none;
+    text-decoration: none;
+    font-weight: bold; /* Section Elements bold */
+    margin-bottom: 6pt; /* Section Elements bottom margin */
+}
+
+/* Inline Text */
+.inline-text {
+    display: inline;
+    margin-bottom: 12pt;
+}
+
+/* h1 Elements */
+h1 {
+    font-size: 18pt;
+    font-style: italic;
+    margin-bottom: 6pt;
+}
+
+/* h2 Elements */
+h2 {
+    color: black;
+    font-size: 16pt;
+    margin-top: 0;
+    margin-bottom: 6pt;
+}
+
+/* Anchor Elements (a) */
+a {
+    color: #D26363; /* Normal text color */
+    background-color: rgb(100, 123, 138); /* Normal background color */
+    text-decoration: none; /* No underline */
+}
+
+a:hover {
+    color: rgb(194, 138, 154); /* Hover text color */
+    background-color: #4C0F20; /* Hover background color */
+    text-decoration: underline; /* Underlined on hover */
+}
+
+/* Image Elements */
+img {
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto; /* Appropriate size */
+}
+
+/* Footer Element */
+footer {
+    text-align: left; /* Flush left */
+    font-size: 10pt;
+}

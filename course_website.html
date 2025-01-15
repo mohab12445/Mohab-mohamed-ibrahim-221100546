@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Website - Home</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <header >
+        <h1>Welcome to the Course Website</h1>
+        <img src="/images/OIP.jpeg" alt="Header Image" class="header-image">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../pages/!index.html">Home</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/registration.html">Register</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="left-column">
+            <p>This is the main content area. Add your course details here.</p>
+            <img src="images/course.jpg" alt="Course Image" class="course-image">
+            <ul>
+                <li>Course 1</li>
+                <li>Course 2</li>
+                <li>Course 3</li>
+            </ul>
+            <table>
+                <tr>
+                    <th>Course</th>
+                    <th>Instructor</th>
+                    <th>Duration</th>
+                </tr>
+                <tr>
+                    <td>Course 1</td>
+                    <td>Instructor A</td>
+                    <td>10 weeks</td>
+                </tr>
+                <tr>
+                    <td>Course 2</td>
+                    <td>Instructor B</td>
+                    <td>8 weeks</td>
+                </tr>
+            </table>
+            <video width="320" height="240" controls>
+                <source src="videos/course-intro.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="right-column">
+            <form action="search.html" method="get">
+                <input type="text" name="query" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+            <marque>Latest news about our courses!</marque>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Course Website</p>
+        <a href="mailto:info@coursewebsite.com">Email Us</a>
+    </footer>
+</body>
+</html>
